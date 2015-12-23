@@ -79,8 +79,8 @@ define apache::vhost(
     $default_vhost      = false,
     $servername         = undef,
     $serveraliases      = [],
-    $options            = ['Indexes','FollowSymLinks','MultiViews'],
-    $override           = ['None'],
+    $options            = ['+FollowSymLinks','Indexes'],
+    $override           = ['All'],
     $vhost_name         = '*',
     $logroot            = "/var/log/${apache::params::apache_name}",
     $access_log         = true,
@@ -286,6 +286,7 @@ define apache::vhost(
       path           => $docroot,
       options        => $options,
       allow_override => $override,
+      enable_send_file => 'off',
       order          => 'allow,deny',
       allow          => 'from all',
     } ]
@@ -358,4 +359,3 @@ define apache::vhost(
     notify  => Service['httpd'],
   }
 }
-

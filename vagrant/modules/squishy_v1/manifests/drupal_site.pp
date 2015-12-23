@@ -1,5 +1,5 @@
 # == Define: squishy_v1::drupal_site
-# 
+#
 # A defined type for setting up Drupal sites. This type does many things, but
 # does not do a git checkout.
 #
@@ -82,6 +82,7 @@ define squishy_v1::drupal_site(
   file { $_settings_file:
     content => template('squishy_v1/settings.php.erb'),
     group => $vagrant ? { 1 => undef, default => 'dev' },
+    ensure  => 'present',
     mode => 'ug+w,o-w',
   }
 

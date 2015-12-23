@@ -6,10 +6,13 @@
     <%- if directory['options'] -%>
     Options <%= Array(directory['options']).join(' ') %>
     <%- end -%>
+    <%- if directory['enable_send_file'] -%>
+    EnableSendFile <%= Array(directory['enable_send_file']).join(' ') %>
+    <%- end -%>
     <%- if directory['allow_override'] -%>
     AllowOverride <%= Array(directory['allow_override']).join(' ') %>
     <%- else -%>
-    AllowOverride None
+    AllowOverride All
     <%- end -%>
     <%- if directory['order'] and directory['order'] != '' -%>
     Order <%= Array(directory['order']).join(',') %>

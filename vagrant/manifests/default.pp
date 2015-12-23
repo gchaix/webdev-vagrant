@@ -13,10 +13,10 @@ apache::vhost { 'vagrant':
 }
 
 # Uncomment this block to enable drupal
-squishy_v1::drupal_site { 'default':
-    root => '/server/htdocs',
-        db_pass => 'asdf',
-}
+# squishy_v1::drupal_site { 'default':
+#     root => '/server/htdocs',
+#         db_pass => 'asdf',
+# }
 
 # Ensure that apache::vhost doesn't clobber our docroot.
 # Alternately, you can use `link` or `directory` if you want to be explicit.
