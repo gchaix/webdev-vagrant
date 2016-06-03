@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/gchaix/webdev-vagrant.png?label=ready&title=Ready)](https://waffle.io/gchaix/webdev-vagrant)
 webdev-vagrant
 ==============
 
